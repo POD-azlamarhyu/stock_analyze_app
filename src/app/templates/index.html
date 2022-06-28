@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+        <meta http-equiv="Content-Type" content="text/html; charset=euc-jp" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp" />
+        <meta name="viewport" content="width = device-width ,initial-scale = 1" />
+        <meta name="author" content="" />
+        <meta name="robots" content="noindex,nofollow" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <title>Webprogramming</title>
+        <meta itemprop="position" content="" />
+        <meta name="description" content="" />
+        <meta name="keyword" content="" />
+        <meta name="generator" content="notepad" />
+        <link type="text/css" href="style.css" rel="stylesheet"/>
+        <link
+        href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        rel="stylesheet"
+        />
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="/static/js/tailwind.config.js"></script>
+    </head>
+    <body class="m-0 p-0 h-screen">
+        <h1 class="text-4xl h-20 my-4 p-3">
+            Flask　株分析
+        </h1>
+
+        <div class="h-5/6 flex flex-row items-center align-middle justify-center md:mx-3 mx-1 p-0">
+            <div class="bg-gradient-to-r from-purple-400 to-purple-200 w-11/12 md:w-136 md:h-100 m-auto rounded-2xl shadow-3xl flex">
+                <a href="{{url_for('display_jp_page')}}" class="flex m-0 p-0 w-full text-4xl text-center justify-center align-middle items-center box-border">
+                    日本株分析
+                </a>
+            </div>
+            <div class="bg-gradient-to-r from-purple-400 to-purple-200 w-11/12 md:w-136 md:h-100 m-auto rounded-2xl shadow-3xl flex">
+                <a href="{{url_for('display_us_page')}}" class="flex m-0 p-0 w-full text-4xl text-center justify-center align-middle items-center box-border">
+                    米国株分析
+                </a>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

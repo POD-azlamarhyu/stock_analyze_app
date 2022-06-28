@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="flex flex-col justify-center items-center align-top w-screen m-0 p-0">
+    <div class="w-full flex  my-3 p-2 justify-center">
+        <form action="/get_us_stock" method="GET">
+            <input type="text" name="ticker" placeholder="ticker symbol" class="w-60 h-10"/>
+            <button type="submit" class="px-5 py-3 bg-cyan-600 text-white">検索</button>
+        </form>
+    </div>
+
+    <div class="w-full flex justify-center">
+
+
+    </div>
+</div>
+
+{% endblock content %}

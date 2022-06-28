@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="flex flex-col justify-center items-center align-top w-screen m-0 p-0">
+    <div class="w-full flex my-3 p-2 justify-center">
+        <form action="/get_js_stock" method="GET">
+            <input type="text" name="stockcode" placeholder="銘柄コード" class="w-60 h-10"/>
+            <button type="submit" class="px-5 py-3 bg-cyan-600 text-white">検索</button>
+        </from>
+    </div>
+
+    <div class="w-full m-2 px-3 text-3xl">
+        銘柄code: {{stockcode}}
+    </div>
+    <div class="w-full flex flex-row justify-center">
+        <div class="w-1/2 m-2">
+            
+        </div>
+    </div>
+    <div class="w-full flex justify-center">
+        {% if jp_stock_detail is not none %}
+        <table class="w-10/12 border-separate border-spacing-2 border-slate-400">
+            <thead class="m-3 py-2 bg-cyan-400">
+                <tr class="w-full m-1 ">
+                    <th class="text-3xl w-1/6 m-3 py-2 border border-l-slate-600 text-slate-600">Date</th>
+                    <th class="text-3xl w-1/6 m-3 py-2 border border-l-slate-600 text-slate-600">High</th>
+                    <th class="text-3xl w-1/6 m-3 py-2 border border-l-slate-600 text-slate-600">Low</th>
+                    <th class="text-3xl w-1/6 m-3 py-2 border border-l-slate-600 text-slate-600">Open</th>
+                    <th class="text-3xl w-1/6 m-3 py-2 border border-l-slate-600 text-slate-600">Close</th>
+                    <th class="text-3xl w-1/6 m-3 py-2 border border-l-slate-600 text-slate-600">Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for df in dataframe %}
+                <tr>
+                    <th class="text-2xl w-1/6 m-3 py-2 border border-l-slate-400 border-r-slate-400 border-b-slate-400">{{df.date}}</th>
+                    <th class="text-2xl w-1/6 m-3 py-2 border border-l-slate-400 border-r-slate-400 border-b-slate-400">{{df.high}}</th>
+                    <th class="text-2xl w-1/6 m-3 py-2 border border-l-slate-400 border-r-slate-400 border-b-slate-400">{{df.low}}</th>
+                    <th class="text-2xl w-1/6 m-3 py-2 border border-l-slate-400 border-r-slate-400 border-b-slate-400">{{df.open}}</th>
+                    <th class="text-2xl w-1/6 m-3 py-2 border border-l-slate-400 border-r-slate-400 border-b-slate-400">{{df.close}}</th>
+                    <th class="text-2xl w-1/6 m-3 py-2 border border-l-slate-400 border-r-slate-400 border-b-slate-400">{{df.vol}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            Empty...
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
