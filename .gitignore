@@ -1,1 +1,5 @@
 .env/
+.DS_Store
+/src/app/static/images/
+/src/app/static/data/
+/src/app/static/picture/

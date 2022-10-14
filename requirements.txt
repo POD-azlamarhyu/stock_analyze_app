@@ -9,3 +9,5 @@ bs4
 beautifulsoup4
 matplotlib
 sqlalchemy
+flask
+openpyxl

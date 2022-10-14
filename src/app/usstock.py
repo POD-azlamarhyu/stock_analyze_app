@@ -13,3 +13,8 @@ class StockUSStock:
     
     def __init__(self,ticker) -> None:
        self.ticker =  ticker
+       self.root = "../static/"
+       self.terms = 10
+       self.stock_data = []
+       
+    
